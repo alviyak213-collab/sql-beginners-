@@ -1,15 +1,15 @@
 --  USE alviya 
-/* CREATE TABLE students
+ CREATE TABLE students
  ( Employee_id INT AUTO_INCREMENT PRIMARY KEY, 
   Name VARCHAR(100) NOT NULL DEFAULT 'No Name', 
   Salary INT, 
   Email VARCHAR(100) UNIQUE,
   Joining_date DATE
-   ); */
+   ); 
 
  --  RENAME TABLE STUDENTS TO EMPLOYEE_DATA ;
 
- /* INSERT INTO Employee_data (Employee_id, Name, Salary, email, Joining_date)
+  INSERT INTO Employee_data (Employee_id, Name, Salary, email, Joining_date)
 VALUES
 (1, 'Aarav Sharma', 45000, 'aarav.sharma@gmail.com', '2022-06-15'),
 (2, 'Ananya Verma', 52000, 'ananya.verma@gmail.com', '2021-03-20'),
@@ -40,17 +40,17 @@ VALUES
 (27, 'Khushi Verma', 67000, 'khushi.verma@gmail.com', '2020-05-27'),
 (28, 'Ankit Mishra', 40000, 'ankit.mishra@gmail.com', '2023-07-03'),
 (29, 'Diya Kapoor', 59000, 'diya.kapoor@gmail.com', '2021-11-19'),
-(30, 'Mohit Sharma', 49000, 'mohit.sharma@gmail.com', '2022-03-23'); */
+(30, 'Mohit Sharma', 49000, 'mohit.sharma@gmail.com', '2022-03-23'); 
 
  -- select * from Employee_data ;
 
 
- /* CREATE TABLE Department (
+  CREATE TABLE Department (
     department_id INT PRIMARY KEY,
     department_name VARCHAR(50) NOT NULL
-); */
+); 
 
-/* INSERT INTO Department (department_id, department_name)
+ INSERT INTO Department (department_id, department_name)
 VALUES
 (1, 'IT'),
 (2, 'HR'),
@@ -81,41 +81,42 @@ VALUES
 (27, 'Finance'),
 (28, 'Marketing'),
 (29, 'Sales'),
-(30, 'Operations'); */
+(30, 'Operations'); 
 
 
 
  -- SELECT * FROM DEPARTMENT ;
 
-/* select 
+ select 
       min(salary) as minimum_salary,
       max(salary) as maximum_salary
-from employee_data */
+from employee_data 
 
 -- salary range (35000-80000)
 
-/* SELECT
+ SELECT
      CASE 
          WHEN Salary < 40000 THEN 'BELOW 40K'
          WHEN Salary BETWEEN 40000 AND 59999 THEN '40K-59K'
          ELSE '60K ABOVE'
         END AS SALARY_RANGE,
-        COUNT(*) AS EMPLOYEE_COUNT */
-/* FROM Employee_data
+        COUNT(*) AS EMPLOYEE_COUNT 
+
+ FROM Employee_data
 GROUP BY
 
     CASE 
          WHEN Salary < 40000 THEN 'BELOW 40K'
         WHEN Salary BETWEEN 40000 AND 59999 THEN '40K-59K'
         ELSE '60K ABOVE'
-        END ; */
+        END ; 
 
 -- SELECT* FROM Employee_data;
 -- SELECT * FROM DEPARTMENT;
 
 -- ALTER TABLE department ADD CONSTRAINT FOREIGN KEY (department_id) REFERENCES Employee_data(employee_id); 
 
-/* SELECT 
+ SELECT 
        e.EMPLOYEE_ID,
        e.NAME,
        e.SALARY,
@@ -123,9 +124,9 @@ GROUP BY
        d.DEPARTMENT_NAME
 FROM EMPLOYEE_DATA e
 join department d 
-on e.employee_id = d.department_id */
+on e.employee_id = d.department_id 
 
-/* SELECT
+ SELECT
     d.Department_Name,
     AVG(e.Salary) AS Average_Salary,
     CASE
@@ -136,9 +137,9 @@ on e.employee_id = d.department_id */
 FROM Employee_data e
 JOIN Department d
 ON e.Employee_ID = d.Department_ID
-GROUP BY d.Department_Name; */
+GROUP BY d.Department_Name; 
 
-/* SELECT
+ SELECT
     d.Department_Name,
     CASE
         WHEN e.Salary < 40000 THEN 'BELOW 40K'
@@ -153,16 +154,17 @@ GROUP BY
     d.Department_Name,
     Salary_Category
 ORDER BY
-    d.Department_Name; */
+    d.Department_Name; 
 
-/*    SELECT
+    SELECT
     e.Name,
     d.Department_Name,
     e.Salary
 FROM Employee_data e
 JOIN Department d
 ON e.Employee_ID = d.Department_ID
-WHERE e.Salary < 40000; */
+WHERE e.Salary < 40000; 
+
 
 
 
